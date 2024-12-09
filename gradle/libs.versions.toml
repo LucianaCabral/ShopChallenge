@@ -25,6 +25,11 @@ glide-compose = "1.0.0-beta01"
 gson = "2.10.1"
 lifecycle-viewmodel = "2.8.7"
 javax-inject = "1"
+annotation = "1.9.1"
+kotlinxCoroutinesPlayServices = "1.8.1"
+fragment = "1.8.5"
+kotlinStdlib = "2.1.0"
+
 
 kotlin-test = "1.9.10"
 mockk = "1.12.3"
@@ -39,10 +44,8 @@ hilt-androidx = "1.2.0"
 hilt-android-testing = "2.38.1"
 
 [libraries]
-glide = { module = "com.github.bumptech.glide:compose", version.ref = "glide-compose" }
-lifecycleRuntime = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-viewmodel" }
-kotlinxCoroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
-kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+# Default
+
 androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3-android" }
 navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayout-compose" }
@@ -64,6 +67,18 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+
+# Added
+fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
+#startup-runtime = { group = "androidx.startup", name = "startup-runtime", version.ref = "startup" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
+kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "kotlinxCoroutinesPlayServices" }
+annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+glide = { module = "com.github.bumptech.glide:compose", version.ref = "glide-compose" }
+lifecycleRuntime = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-viewmodel" }
+kotlinxCoroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 materialIcons = { module = "androidx.compose.material:material-icons-extended", version.ref = "material-icons" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
@@ -87,15 +102,16 @@ turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 coreTesting = { module = "androidx.arch.core:core-testing", version.ref = "core-testing" }
 hiltAndroidTesting = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt-android-testing" }
 
-
-
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-devtoolsKsp = { id = "com.google.devtools.ksp", version.ref = "devtools-ksp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+devtoolsKsp = { id = "com.google.devtools.ksp", version.ref = "devtools-ksp" }
+kotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 hiltAndroidPlugin = { id = "com.google.dagger.hilt.android", version.ref = 'hilt-android' }
-kotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+
 

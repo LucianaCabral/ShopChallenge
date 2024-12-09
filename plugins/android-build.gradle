@@ -1,12 +1,10 @@
-apply plugin: "com.google.devtools.ksp"
-apply plugin: "com.google.dagger.hilt.android"
-apply plugin: "kotlin-kapt"
+apply plugin: "org.jetbrains.kotlin.plugin.serialization"
+apply plugin: "kotlin-parcelize"
 
 android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "br.leeloo.shopchallenge"
         minSdk = 24
         //noinspection OldTargetApi
         targetSdk = 34
@@ -25,26 +23,17 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
-        freeCompilerArgs += ["-opt-in=kotlin.RequiresOptIn"]
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.4.3'
-    }
 
-    hilt {
-        enableAggregatingTask = true
-    }
+        kotlinOptions {
+            jvmTarget = "11"
+            freeCompilerArgs += ["-opt-in=kotlin.RequiresOptIn"]
+        }
 }
-
 
 dependencies {
 
@@ -72,11 +61,11 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
-    implementation(libs.hiltAndroid)
-    implementation(libs.hiltNavigation)
-    implementation(libs.hiltAndroid)
-    kapt(libs.hiltCompiler)
-    kapt(libs.androidxHiltCompiler)
+//    implementation(libs.hiltAndroid)
+//    implementation(libs.hiltNavigation)
+//    implementation(libs.hiltAndroid)
+//    kapt(libs.hiltCompiler)
+//    kapt(libs.androidxHiltCompiler)
 
     // Test
     implementation(libs.mockkAndroid)
@@ -88,7 +77,7 @@ dependencies {
     testImplementation(libs.turbine)
     testImplementation(libs.coreTesting)
 
-    androidTestImplementation(libs.hiltAndroidTesting)
+//    androidTestImplementation(libs.hiltAndroidTesting)
     androidTestImplementation(libs.kotlintest)
     androidTestImplementation(libs.mockkAndroid)
     androidTestImplementation(libs.truth)

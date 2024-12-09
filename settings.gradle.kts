@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Shop Challenge"
 include(":app")
+include(":core:data")
