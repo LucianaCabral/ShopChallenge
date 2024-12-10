@@ -23,3 +23,5 @@ rootProject.name = "Shop Challenge"
 include(":app")
 include(":core:data")
 include(":core:navigation")
+include(":features:ride")
+include(":features:ride:rideestimate")
