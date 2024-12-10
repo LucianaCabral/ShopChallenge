@@ -10,4 +10,9 @@ android {
 }
 
 dependencies {
+    api(libs.gson)
+    api(libs.gsonConverter)
+    implementation(libs.loggingInterceptor)
+    implementation(libs.retrofit)
+    implementation(libs.annotation)
   }

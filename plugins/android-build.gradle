@@ -1,5 +1,8 @@
 apply plugin: "org.jetbrains.kotlin.plugin.serialization"
 apply plugin: "kotlin-parcelize"
+apply plugin: "com.google.dagger.hilt.android"
+apply plugin: "com.google.devtools.ksp"
+apply plugin: "kotlin-kapt"
 
 android {
     compileSdk = 35
@@ -59,13 +62,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-
-//    implementation(libs.hiltAndroid)
-//    implementation(libs.hiltNavigation)
-//    implementation(libs.hiltAndroid)
-//    kapt(libs.hiltCompiler)
-//    kapt(libs.androidxHiltCompiler)
+    implementation(libs.hiltAndroid)
+    implementation(libs.hiltNavigation)
+    implementation(libs.hiltAndroid)
+    kapt(libs.hiltCompiler)
+    kapt(libs.androidxHiltCompiler)
 
     // Test
     implementation(libs.mockkAndroid)
@@ -77,7 +78,7 @@ dependencies {
     testImplementation(libs.turbine)
     testImplementation(libs.coreTesting)
 
-//    androidTestImplementation(libs.hiltAndroidTesting)
+    androidTestImplementation(libs.hiltAndroidTesting)
     androidTestImplementation(libs.kotlintest)
     androidTestImplementation(libs.mockkAndroid)
     androidTestImplementation(libs.truth)
