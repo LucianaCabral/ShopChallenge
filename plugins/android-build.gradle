@@ -1,12 +1,13 @@
-apply plugin: "com.google.devtools.ksp"
+apply plugin: "org.jetbrains.kotlin.plugin.serialization"
+apply plugin: "kotlin-parcelize"
 apply plugin: "com.google.dagger.hilt.android"
+apply plugin: "com.google.devtools.ksp"
 apply plugin: "kotlin-kapt"
 
 android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "br.leeloo.shopchallenge"
         minSdk = 24
         //noinspection OldTargetApi
         targetSdk = 34
@@ -25,26 +26,17 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
-        freeCompilerArgs += ["-opt-in=kotlin.RequiresOptIn"]
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.4.3'
-    }
 
-    hilt {
-        enableAggregatingTask = true
-    }
+        kotlinOptions {
+            jvmTarget = "11"
+            freeCompilerArgs += ["-opt-in=kotlin.RequiresOptIn"]
+        }
 }
-
 
 dependencies {
 
@@ -70,8 +62,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-
     implementation(libs.hiltAndroid)
     implementation(libs.hiltNavigation)
     implementation(libs.hiltAndroid)
