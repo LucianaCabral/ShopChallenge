@@ -77,7 +77,6 @@ dependencies {
     testImplementation(libs.truth)
     testImplementation(libs.turbine)
     testImplementation(libs.coreTesting)
-    testImplementation(libs.kotlinxCoroutinesTest)
 
     androidTestImplementation(libs.hiltAndroidTesting)
     androidTestImplementation(libs.kotlintest)

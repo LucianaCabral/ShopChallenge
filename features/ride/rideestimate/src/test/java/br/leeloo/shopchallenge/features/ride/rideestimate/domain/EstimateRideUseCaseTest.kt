@@ -44,7 +44,7 @@ internal class EstimateRideUseCaseTest {
 
         // Then
         estimateRideResult.test {
-            assertEquals(result, awaitItem(), "O item retornado pelo fluxo não é o esperado.")
+            assertEquals(result, awaitItem(), "The item returned by the flow is not what was expected.")
             cancelAndConsumeRemainingEvents()
         }
         verify {
@@ -81,7 +81,7 @@ internal class EstimateRideUseCaseTest {
             assertEquals(
                 cause,
                 awaitError(),
-                "A exceção retornada pelo fluxo não corresponde ào esperada."
+                "The exception returned by the flow does not correspond to what was expected."
             )
         }
         verify {
